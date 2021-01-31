@@ -1,0 +1,55 @@
+{
+  "name": "sakutto-do",
+  "description": "to-do list vscode extension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.26.0"
+  },
+  "publisher": "csnagu",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "title": "Enable sakutto-do",
+        "command": "sakutto-do.enable",
+        "category": "sakutto-do"
+      },
+      {
+        "title": "Disable sakutto-do",
+        "command": "sakutto-do.disable",
+        "category": "sakutto-do"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "sakutto-do.enable": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint . --ext .ts,.tsx",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.0",
+    "@types/vscode": "^1.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.1.0",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "stopwatch-node": "^1.1.0"
+  }
+}
